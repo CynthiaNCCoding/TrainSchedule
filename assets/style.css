@@ -1,0 +1,53 @@
+
+
+.jumbotron h1 {
+	text-align: center;
+	font-size: 70px;
+	padding: 0 10px;
+}
+
+.jumbotron	{
+	/*background-image: url("images/choochoo.jpeg");*/
+	text-align: center;
+	font-size: 30px;
+	background-color: gray;
+	color: white;
+	width: 80%;
+	justify-content: center;
+	margin: 30px auto;
+}
+
+.panel {
+	width: 70%;
+	margin: 0 auto;
+}
+
+.panel-heading {
+	font-size: 20px;
+	font-weight: bolder;
+	margin-bottom: 29px;
+}
+
+.btn {
+    margin: 20px 0 40px 0;
+    font-size: 20px;
+    margin-left: 10px;
+}
+
+.input-group {
+	width: 100%;
+}
+
+.inputPanel {
+	margin-top: 59px;
+	margin-bottom: 80px;
+}
+
+.input-group {
+	padding: 8px 10px;
+}
+
+label {
+	font-size: 16px;
+	font-weight: bold;
+}

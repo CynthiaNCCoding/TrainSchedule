@@ -1,0 +1,83 @@
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Train Time</title>
+
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <header name = "Access-Control-Allow-Origin" value = "*" />
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+
+    <link href="assets/style.css" rel="stylesheet">
+<!--   </head>
+    <link href="assets/css/style.css" rel="stylesheet"> -->
+    <link href="https://fonts.googleapis.com/css?family=Oregano" rel="stylesheet">
+</head>
+
+<body>
+	<div class="jumbotron center-block">
+  		<h1>Any Time is Train Time!</h1>
+  		<p>Choo choo!</p>
+	</div>
+
+	<div class="panel panel-primary">
+  		<!-- Default panel contents -->
+  		<div class="panel-heading">Current Train Schedule</div>
+		<!-- Table -->
+  		  <table class="table" id="schedule-table">
+    		<thead>
+      			<tr>
+        			<th>Train Name</th>
+			        <th>Destination</th>
+			        <th>Frequency (min)</th>
+			        <th>Next Arrival</th>
+			        <th>Minutes Away</th>
+      			</tr>
+    		</thead>
+    		<tbody>
+<!-- 		      <tr>
+		        <td id="name">Example</td>
+		        <td id="destination">Example</td>
+		        <td id="frequency">Example</td>
+		        <td id="arrival">Example</td>
+		        <td id="away">Example</td>
+		      </tr>	   -->    
+		    </tbody>
+		  </table>
+	</div> <!--closes panel-->	
+  	
+ 	<div class="panel panel-primary inputPanel">
+  		<!-- Default panel contents --> 		
+	  	<div class="panel-heading">Add Train</div>
+	  	<form id="train-form">	
+			<div class="input-group input-group-lg">
+				<label>Train Name</label>
+	  			<input id="train-name" type="text" class="form-control"/>
+			</div>
+			<div class="input-group input-group-lg">
+				<label>Destination</label>
+	  			<input id="train-dest" type="text" class="form-control"/>
+			</div>		
+			<div class="input-group input-group-lg">
+				<label>First Train Time (HH:mm)</label>
+	  			<input id="train-time" type="text" pattern="([01]?[0-9]{1}|2[0-3]{1}):[0-5]{1}[0-9]{1}" class="form-control"/>
+	  		</div>
+	 		<div class="input-group input-group-lg"><label>Frequency (min)</label>
+	  			<input id="train-freq" type="number" class="form-control"/>
+			</div>
+			<button class="btn btn-primary">Submit</button>
+		</form>
+	</div> <!--closes panel-->	
+
+	<script src="https://www.gstatic.com/firebasejs/3.7.5/firebase.js"></script>
+
+	<script
+  	src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+  	integrity="sha256-k2WSCIexGzOj3Euiig+TlR8gA0EmPjuc79OEeY5L45g="
+  	crossorigin="anonymous"></script>
+
+	<script src="assets/app.js"></script>
+
+</body>
+</html>
