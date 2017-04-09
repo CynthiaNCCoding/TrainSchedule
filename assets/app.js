@@ -14,10 +14,7 @@ $(document).ready(function() {
 
 
     //declaring variables
-    var trainName;
-    var trainDest;
-    var trainTime;
-    var trainFreq;
+
     var db = firebase.database();
     var schedule = db.ref("schedule");
 
@@ -34,10 +31,35 @@ $(document).ready(function() {
             '</tr>';
         $('#schedule-table tbody').append(newRow);
 
+        var now = moment();
+        var firstRun = moment();
+        var hrsMins = data.val().trainTime.split(":");
+        firstRun.hour(hrsMins[0]);
+        firstRun.minute(hrsMins[1]);
+        firstRun.second(0);
+
+        while (!now.isBefore(firstRun)) {
+            firstRun.add(data.val().trainFreq, 'minutes');
+        }
+
+        if (!now.isBefore(firstRun)) {
+            var diff = now.diff(firstRun);
+            var hoursDiff = diff.asHours();
+            var minsDiff = diff.mins();
+            var secsDiff = diff.secs();
+            var niceDisplayDiff = diff.humanize();
+
+        } else {
+
+        }
     });
 
     //get user Inputs
     $("#train-form").on("submit", function() {
+        var trainName;
+        var trainDest;
+        var trainTime;
+        var trainFreq;
         trainName = $("#train-name").val().trim();
         trainDest = $("#train-dest").val().trim();
         trainTime = $("#train-time").val();
@@ -56,7 +78,7 @@ $(document).ready(function() {
             'trainFreq': trainFreq
         });
 
-        return false;
+         return false;
 
     });
 });
